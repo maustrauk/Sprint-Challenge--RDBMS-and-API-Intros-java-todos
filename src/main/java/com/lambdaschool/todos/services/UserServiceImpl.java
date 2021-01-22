@@ -85,6 +85,6 @@ public class UserServiceImpl implements UserService
     @Override
     public List<UserNameCountTodos> getCountUserTodos()
     {
-        return null;
+        return userrepos.getCountUserTodos();
     }
 }
