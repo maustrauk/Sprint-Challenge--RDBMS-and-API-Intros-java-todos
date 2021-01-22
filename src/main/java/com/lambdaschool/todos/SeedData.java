@@ -1,5 +1,6 @@
 package com.lambdaschool.todos;
 
+import com.github.javafaker.Faker;
 import com.lambdaschool.todos.models.Todos;
 import com.lambdaschool.todos.models.User;
 import com.lambdaschool.todos.services.UserService;
@@ -7,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * SeedData puts both known and random data into the database. It implements CommandLineRunner.
@@ -81,5 +86,52 @@ public class SeedData implements CommandLineRunner
             "password",
             "misskitty@school.lambda");
         userService.save(u5);
+
+        //Begins the faker data
+
+        Faker dataFaker = new Faker(new Locale("en-US"));
+
+        Set<String> usersNames = new HashSet<>();
+
+        for (int i = 0; i < 100; i++) {
+            usersNames.add(dataFaker.name().username());
+        }
+
+        for (String name : usersNames) {
+            String password = dataFaker.howIMetYourMother().character();
+
+            String email = name + "@gmail.com";
+
+            User newUser = new User(name, password, email);
+
+            newUser.getTodos().clear();
+
+            int numberOfTodos = dataFaker.random().nextInt(4);
+
+            for (int i = 0; i < numberOfTodos; i++) {
+                int typeOfTodos = dataFaker.random().nextInt(3);
+                String todoDescription = "";
+                switch (typeOfTodos) {
+                    case 0:
+                        todoDescription = "I need to travel to " + dataFaker.lordOfTheRings().location();
+                        break;
+
+                    case 1:
+                        todoDescription = "I need to meet with " + dataFaker.lordOfTheRings().character();
+                        break;
+
+                    case 2:
+                        todoDescription = "I need to drink " + dataFaker.beer().name();
+                        break;
+
+                    default:
+                        todoDescription = "Todo nothing";
+                }
+                Todos newTodo = new Todos(newUser, todoDescription);
+                newUser.getTodos().add(newTodo);
+            }
+
+            userService.save(newUser);
+        }
     }
 }
