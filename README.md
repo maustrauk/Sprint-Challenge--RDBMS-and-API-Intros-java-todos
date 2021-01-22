@@ -1749,9 +1749,21 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Can you explain your data model, data schema to me?
+
+A: A data model is an abstract model that organizes elements of data and standardizes how they relate to one another and to the properties of real-world entities.
+The database schema of a database is its structure described in a formal language supported by the database management system (DBMS). The term "schema" refers to the organization of data as a blueprint of how the database is constructed (divided into database tables in the case of relational databases). 
+
 2. Can you explain how you connected your API to a database?
+
+A: API in Java Spring connected thru repositories interfaces. User of API connects by using controllers that use services methods as business logic. That logic is using SQL queries in repositories interfaces.
+
 3. Can you explain the flow of data from the client through the backend system and back to the client?
+
+A: As I mentioned earlier, requests that coming from client are going thru endpoints in controllers. Then controllers making requests to services to use business logic. That logic working with client requests and making changes and/or return data from database using SQL queries back to client.
+
 4. How did you handle querying in your application: custom querying vs JPA Querying?
+
+A: In most of cases I'm using built-in JPA Querying and if I need something special data operation method I will build my own custom query.
 
 ## Instructions
 
@@ -1844,4 +1856,4 @@ In your solution, it is essential that you follow best practices and produce cle
 
 Follow these steps for completing your project.
 
-- [ ] Set up your fork on Github to submit via CodeGrade, pushing commits to your <firstName-lastName> branch.
+- [*] Set up your fork on Github to submit via CodeGrade, pushing commits to your <firstName-lastName> branch.
