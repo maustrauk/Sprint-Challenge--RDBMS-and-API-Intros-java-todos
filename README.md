@@ -1757,12 +1757,12 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Start with the provided todo application
-- [ ] Push commits: `git push -u origin <firstName-lastName>`
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [*] Create a forked copy of this project
+- [*] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [*] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [*] Start with the provided todo application
+- [*] Push commits: `git push -u origin <firstName-lastName>`
+- [*] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
 
 #### Video on How to Set Up Your Project
 
@@ -1772,11 +1772,11 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 You will be creating a REST api service to store and read data from an H2 database.
 
-- [ ] Please fork and clone this repository. This repository has a starting application called todos. You must start working from there. Regularly commit and push your code as appropriate.
+- [*] Please fork and clone this repository. This repository has a starting application called todos. You must start working from there. Regularly commit and push your code as appropriate.
 
-- [ ] The initial application contains the model for the users table. Endpoints are already created and the structure for auditing fields is in place. You are adding the model for the todos table and updating the services to work with the new table.
+- [*] The initial application contains the model for the users table. Endpoints are already created and the structure for auditing fields is in place. You are adding the model for the todos table and updating the services to work with the new table.
 
-- [ ] TODOS
+- [*] TODOS
   - `todoid` primary key, not null long
   - `description` string, not null
   - `completed` boolean. Note that for all new todos, default completed to false
@@ -1784,17 +1784,17 @@ You will be creating a REST api service to store and read data from an H2 databa
   - All tables must have the standard 4 auditing fields in place and working, being populated: created on, created by, last modified on, last modified by. The auditing usernames will all default to `llama`.
   - USERS have a one to many relationship with TODOS.
 
-- [ ] SeedData.java is a class provided to populate the database. The structure cannot be changed! Do populate the database with this data.
+- [*] SeedData.java is a class provided to populate the database. The structure cannot be changed! Do populate the database with this data.
 
-- [ ] Do NOT change or delete entries in the POM.XML - Dependencies may be added as needed
+- [*] Do NOT change or delete entries in the POM.XML - Dependencies may be added as needed
 
 The following end points are already available in the initial application. You are to make sure the end points work with the newly added todos table
 
-- [ ] GET /users/users - return all of the users and their todos.
+- [*] GET /users/users - return all of the users and their todos.
 
-- [ ] GET /users/user/{userid} - return the user and their todos based off of user id.
+- [*] GET /users/user/{userid} - return the user and their todos based off of user id.
 
-- [ ] POST /users/user - adds a user with their todos
+- [*] POST /users/user - adds a user with their todos
 
   You can use the following to test this!
 
@@ -1814,17 +1814,17 @@ The following end points are already available in the initial application. You a
   }
   ```
 
-- [ ] PATCH /todos/todo/{todoid} - mark a todo as completed.
+- [*] PATCH /todos/todo/{todoid} - mark a todo as completed.
 
-- [ ] DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
+- [*] DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
 
 ### Required best practices
 
-- [ ] Consistent naming. Examples: variables, functions, Components, and file/folder organization.
-- [ ] Consistent spacing. Examples: line breaks, around arguments and before/after functions.
-- [ ] Consistent quotation usage.
-- [ ] Spell-check.
-- [ ] Schedule time to review, refine and reassess your work.
+- [*] Consistent naming. Examples: variables, functions, Components, and file/folder organization.
+- [*] Consistent spacing. Examples: line breaks, around arguments and before/after functions.
+- [*] Consistent quotation usage.
+- [*] Spell-check.
+- [*] Schedule time to review, refine and reassess your work.
 
 It is better to submit a challenge that meets [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product) than one that attempts too much and fails.
 
